@@ -3,8 +3,17 @@ import { View, Text, Button, StyleSheet, Image, TouchableOpacity, TextInput } fr
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Login = ({ navigation }) => {
-  const handleButtonPress = () => {
-    alert("Signup button clicked");
+
+  const handleForgotPassword = () => {
+    alert("Forgot Password clicked");
+  };
+
+  const handleSignUpPress = () => {
+    navigation.navigate('Signup');
+  };
+
+  const handleLoginButton = () => {
+    navigation.navigate('Home');
   };
 
   return (
@@ -32,19 +41,20 @@ const Login = ({ navigation }) => {
         placeholder="Enter Password"
         secureTextEntry
       />
-      <View style={styles.termsContainer}>
-        <TouchableOpacity style={styles.checkbox} />
-        <Text>I agree to the Terms and Conditions</Text>
-      </View>
+      <TouchableOpacity style={styles.forgotPassword} onPress={handleForgotPassword}>
+        <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+      </TouchableOpacity>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={handleButtonPress}
+          onPress={handleLoginButton}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Register</Text>
+          <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity onPress={handleSignUpPress}>
       <Text style={styles.loginText}>Don't have an account? Sign Up</Text>
+      </TouchableOpacity>
       <View style={styles.dividerContainer}>
         <View style={styles.dividerLine} />
         <Text style={styles.orText}>OR</Text>
@@ -111,20 +121,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     color: '#000',
   },
-  termsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  forgotPassword: {
+    alignSelf: 'flex-end',
     marginBottom: 16,
   },
-  checkbox: {
-    width: 20,
-    height: 20,
-    borderWidth: 1,
-    borderColor: '#D3D3D3',
-    borderRadius: 4,
-    marginRight: 8,
-  },
-  termsText: {
+  forgotPasswordText: {
     fontSize: 14,
     color: '#05652D',
   },

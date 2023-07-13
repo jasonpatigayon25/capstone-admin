@@ -7,6 +7,10 @@ const Signup = ({ navigation }) => {
     alert("Signup button clicked");
   };
 
+  const handleLoginPress = () => {
+    navigation.navigate('Login');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
@@ -49,7 +53,9 @@ const Signup = ({ navigation }) => {
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
       </View>
-      <Text style={styles.loginText}>Already have an account? Log In</Text>
+      <TouchableOpacity onPress={handleLoginPress}>
+        <Text style={styles.loginText}>Already have an account? Log In</Text>
+      </TouchableOpacity>
       <View style={styles.dividerContainer}>
         <View style={styles.dividerLine} />
         <Text style={styles.orText}>OR</Text>
