@@ -48,14 +48,14 @@ const Home = ({ navigation }) => {
         </ScrollView>
       </View>
       <ScrollView>
-        <View style={styles.carouselContainer}>
+        <View style={[styles.carouselContainer, styles.sectionContainer]}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <Image source={require('./assets/feature1.jpg')} style={styles.featuredImage} />
             <Image source={require('./assets/feature2.jpg')} style={styles.featuredImage} />
             <Image source={require('./assets/feature3.jpg')} style={styles.featuredImage} />
           </ScrollView>
         </View>
-        <View style={styles.recommendedContainer}>
+        <View style={[styles.recommendedContainer, styles.sectionContainer]}>
           <Text style={styles.sectionTitle}>Recommended for You</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <Image source={require('./assets/recommended1.jpg')} style={styles.recommendedImage} />
@@ -106,10 +106,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#E3FCE9',
-    paddingHorizontal: 20,
     paddingTop: 20,
   },
   header: {
+    paddingHorizontal: 20,
     marginBottom: 20,
   },
   searchContainer: {
@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
   categoriesContainer: {
     marginTop: 10,
     marginBottom: 20,
+    paddingHorizontal: 20,
   },
   category: {
     alignItems: 'center',
@@ -155,20 +156,23 @@ const styles = StyleSheet.create({
   carouselContainer: {
     marginBottom: 20,
   },
-  featuredImage: {
-    width: 300,
-    height: 200,
-    marginRight: 10,
-    borderRadius: 10,
-  },
   recommendedContainer: {
     marginBottom: 20,
+  },
+  sectionContainer: {
+    paddingHorizontal: 20,
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#000',
+    color: '#05652D',
+  },
+  featuredImage: {
+    width: 300,
+    height: 200,
+    marginRight: 10,
+    borderRadius: 10,
   },
   recommendedImage: {
     width: 200,

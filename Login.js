@@ -32,15 +32,21 @@ const Login = ({ navigation }) => {
         source={require('./assets/AppLogo.png')}
         style={styles.logo}
       />
-      <TextInput
-        style={styles.input}
-        placeholder="Enter Username"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Enter Password"
-        secureTextEntry
-      />
+      <View style={styles.inputContainer}>
+        <Icon name="user" size={24} color="#D3D3D3" style={styles.inputIcon} />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter Username"
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Icon name="lock" size={24} color="#D3D3D3" style={styles.inputIcon} />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter Password"
+          secureTextEntry
+        />
+      </View>
       <TouchableOpacity style={styles.forgotPassword} onPress={handleForgotPassword}>
         <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
       </TouchableOpacity>
@@ -53,7 +59,7 @@ const Login = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <TouchableOpacity onPress={handleSignUpPress}>
-      <Text style={styles.loginText}>Don't have an account? Sign Up</Text>
+        <Text style={styles.loginText}>Don't have an account? Sign Up</Text>
       </TouchableOpacity>
       <View style={styles.dividerContainer}>
         <View style={styles.dividerLine} />
@@ -112,13 +118,21 @@ const styles = StyleSheet.create({
     height: 70,
     marginBottom: 20,
   },
-  input: {
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     borderWidth: 1,
     borderColor: '#FFF',
     paddingVertical: 10,
     paddingHorizontal: 16,
     marginBottom: 16,
     backgroundColor: '#FFF',
+  },
+  inputIcon: {
+    marginRight: 10,
+  },
+  input: {
+    flex: 1,
     color: '#000',
   },
   forgotPassword: {
