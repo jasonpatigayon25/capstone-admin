@@ -13,7 +13,7 @@ const Login = ({ navigation }) => {
   };
 
   const handleLoginButton = () => {
-    navigation.navigate('Home');
+    navigation.navigate('AdminHome');
   };
 
   return (

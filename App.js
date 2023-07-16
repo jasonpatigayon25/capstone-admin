@@ -6,6 +6,7 @@ import LoginScreen from './Login';
 import SignupScreen from './Signup';
 import SellScreen from './Sell';
 import DonateScreen from './Donate';
+import AdminHome from './AdminHome';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const App = () => {
         <Stack.Screen name="Signup" component={SignupScreen} />
         <Stack.Screen name="Sell" component={SellScreen} />
         <Stack.Screen name="Donate" component={DonateScreen} />
+        <Stack.Screen name="AdminHome" component={AdminHome} />
       </Stack.Navigator>
     </NavigationContainer>
   );
